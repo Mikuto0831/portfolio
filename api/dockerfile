@@ -1,0 +1,33 @@
+# Start from the official Golang image
+FROM golang:1.23-alpine
+
+# Set the Current Working Directory inside the container
+WORKDIR /app/src/
+
+# Copy go mod and sum files
+COPY go.mod go.sum ./
+
+# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
+RUN go mod download
+
+# Copy the source from the current directory to the Working Directory inside the container
+COPY . .
+
+# RUN ls api/migrations
+# Run the migrations.go
+# RUN go run ./api/migrations/migration.go
+
+# Build the Go app
+RUN go build -o main ./api
+
+# Expose port 8080 to the outside world
+EXPOSE 8080
+
+RUN go install github.com/air-verse/air@latest && export PATH=$PATH:$(go env GOPATH)/bin 
+
+WORKDIR /app/src/api
+
+RUN air init
+
+# Command to run the executable
+CMD ["air"]
