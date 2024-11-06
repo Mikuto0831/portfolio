@@ -1,13 +1,15 @@
-// App.jsx
-
-import './App.css';
+import { Route, Switch } from "wouter";
+import { Header } from "./components/header";
+import "./index.css";
+import { Index } from "./pages";
 
 function App() {
-    return (
-        <div>
-            <h1>こんにちは</h1>
-        </div>
-    );
+    return (<>
+        <Header />
+        <Switch>
+            <Route path="/" component={Index} />
+        </Switch>
+    </>);
 }
 
 export default App;
