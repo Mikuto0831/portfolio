@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active-menu-link {
+  @apply text-blue-500;
+}
