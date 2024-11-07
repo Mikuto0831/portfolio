@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.active-menu-link {
+.menu-link {
+  @apply p-1;
+  @apply border-b-2;
+}
+.active-menu-link 
+{
+  @apply p-1;
   @apply text-blue-500;
+  @apply border-b-2;
+  @apply border-blue-500;
+}
+
+@media (min-width: 768px) {
+  .hidden {
+    display: none !important;
+  }
+  .flex {
+    display: flex !important;
+  }
 }
