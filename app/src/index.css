@@ -13,12 +13,3 @@
   @apply border-b-2;
   @apply border-blue-500;
 }
-
-@media (min-width: 768px) {
-  .hidden {
-    display: none !important;
-  }
-  .flex {
-    display: flex !important;
-  }
-}
