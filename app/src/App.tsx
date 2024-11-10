@@ -5,15 +5,15 @@ import { Index, NotFound } from "./pages/pages";
 
 function App() {
     return (<>
-        <div className="fixed top-0 w-full">
+        <header className="fixed top-0 w-full">
             <Header />
-        </div>
-        <div className="mt-[72px]">
+        </header>
+        <main className="mt-[72px]">
             <Switch>
                 <Route path="/" component={Index} />
                 <Route component={NotFound} />
             </Switch>
-        </div>
+        </main>
     </>);
 }
 

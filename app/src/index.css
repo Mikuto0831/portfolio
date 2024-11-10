@@ -5,6 +5,7 @@
 .menu-link {
   @apply p-1;
   @apply border-b-2;
+  @apply border-slate-500;
 }
 .active-menu-link 
 {
@@ -12,4 +13,11 @@
   @apply text-blue-500;
   @apply border-b-2;
   @apply border-blue-500;
+}
+
+.title-gradation {
+  background-image: linear-gradient(90deg,
+  rgba(255, 255, 255, 0),
+  rgba(255, 255, 255, 1) 10% 85%,
+  rgba(255, 255, 255, 0));
 }
